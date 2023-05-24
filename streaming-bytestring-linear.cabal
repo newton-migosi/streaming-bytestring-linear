@@ -85,6 +85,87 @@ library
   if impl(ghc <8.0)
     build-depends: semigroups >=0.18 && <0.19
 
+library linear-bs
+  default-language: Haskell2010
+  hs-source-dirs:   lib-linear
+  ghc-options:
+    -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns
+    -Wmissing-deriving-strategies -Wunused-foralls -Wunused-foralls
+    -fprint-explicit-foralls -fprint-explicit-kinds
+
+  default-extensions:
+    NoFieldSelectors
+    NoStarIsType
+    BangPatterns
+    ConstraintKinds
+    DataKinds
+    DeriveAnyClass
+    DeriveDataTypeable
+    DeriveFoldable
+    DeriveFunctor
+    DeriveGeneric
+    DeriveLift
+    DeriveTraversable
+    DerivingStrategies
+    DerivingVia
+    DuplicateRecordFields
+    EmptyCase
+    EmptyDataDecls
+    EmptyDataDeriving
+    ExistentialQuantification
+    ExplicitForAll
+    FlexibleContexts
+    FlexibleInstances
+    GADTSyntax
+    GeneralisedNewtypeDeriving
+    ImportQualifiedPost
+    InstanceSigs
+    KindSignatures
+    LambdaCase
+    LinearTypes
+    MultiParamTypeClasses
+    MultiWayIf
+    NumericUnderscores
+    OverloadedLabels
+    OverloadedStrings
+    PolyKinds
+    PostfixOperators
+    RankNTypes
+    ScopedTypeVariables
+    StandaloneDeriving
+    StandaloneKindSignatures
+    TupleSections
+    TypeApplications
+    TypeFamilies
+    TypeOperators
+    UnicodeSyntax
+    ViewPatterns
+  build-depends:
+      base              >=4.13.0.0 && <4.18.0.0.0
+    , bytestring
+    , exceptions
+    , fast-logger
+    , filepath
+    , foldl
+    , io-streams
+    , linear-base
+    , mtl
+    , newtype
+    , optics-core
+    , optics-th
+    , optparse-generic
+    , prettyprinter
+    , profunctors
+    , safe-exceptions
+    , scientific
+    , shower
+    , th-env
+    , time
+    , with-utf8
+  exposed-modules:
+    Streaming.ByteString.Linear
+    Streaming.ByteString.Internal.Types
+
 test-suite test
   default-language: Haskell2010
   type:             exitcode-stdio-1.0
