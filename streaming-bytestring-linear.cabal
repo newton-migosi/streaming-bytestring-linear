@@ -21,13 +21,15 @@ author:             nmigosi
 category:           Data, Pipes, Streaming
 build-type:         Simple
 extra-source-files:
-  README.md
   CHANGELOG.md
-  tests/sample.txt
+  README.md
   tests/groupBy.txt
+  tests/sample.txt
 
 stability:          Experimental
-homepage:           https://github.com/newton-migosi/streaming-bytestring-linear
+homepage:
+  https://github.com/newton-migosi/streaming-bytestring-linear
+
 bug-reports:
   https://github.com/newton-migosi/streaming-bytestring-linear/issues
 
@@ -44,7 +46,8 @@ tested-with:
 
 source-repository head
   type:     git
-  location: https://github.com/newton-migosi/streaming-bytestring-linear
+  location:
+    https://github.com/newton-migosi/streaming-bytestring-linear
 
 library
   default-language: Haskell2010
@@ -80,8 +83,7 @@ library
     , transformers-base  >=0.4     && <0.5
 
   if impl(ghc <8.0)
-    build-depends:
-      semigroups         >=0.18    && <0.19
+    build-depends: semigroups >=0.18 && <0.19
 
 test-suite test
   default-language: Haskell2010
@@ -89,13 +91,13 @@ test-suite test
   hs-source-dirs:   tests
   main-is:          Test.hs
   build-depends:
-      base                  >=4.9     && <5
-    , bytestring            >=0.10.4  && <0.12
-    , resourcet             >=1.1     && <1.4
+      base                  >=4.9      && <5
+    , bytestring            >=0.10.4   && <0.12
+    , resourcet             >=1.1      && <1.4
     , smallcheck            >=1.1.1
-    , streaming             >=0.1.4.0 && <0.3
+    , streaming             >=0.1.4.0  && <0.3
     , streaming-bytestring
     , tasty                 >=0.11.0.4
     , tasty-hunit           >=0.9
     , tasty-smallcheck      >=0.8.1
-    , transformers          >=0.3     && <0.7
+    , transformers          >=0.3      && <0.7
